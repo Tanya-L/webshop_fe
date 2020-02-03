@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-// import { DashboardComponent } from './components/dashboard/dashboard.component';
-// import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
 
 // A typical Angular Route has two properties:
 // 	- path: a string that matches the URL in the browser address bar.
@@ -13,9 +14,11 @@ import { ProductListComponent } from './components/product-list/product-list.com
 
 const routes: Routes = [
   { path: '', component: ProductListComponent, pathMatch: 'full' },
-  { path: 'product', component: ProductComponent },
-  // { path: 'product/:id', component: ProductComponent },
-//   { path: 'orders', component: HeroesComponent },
+  { path: 'product', component: ProductComponent, pathMatch: 'full' },
+  { path: 'product/:id', component: ProductDetailComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'shipping', component: ShippingComponent },
+
 ];
 
 @NgModule({

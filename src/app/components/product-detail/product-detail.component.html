@@ -1,0 +1,20 @@
+<div>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+    </mat-card-header>
+    <p *ngIf="product.imageUrl !== ''">
+      <img mat-card-lg-image src="{{ product.imageUrl }}" alt="Photo TShirt" />
+    </p>
+    <mat-card-content>
+      <p>Descrition: </p>{{ product.details }}
+      <p>Color: {{ product.color.colorName }}</p>
+      <p>Size: {{ product.size.sizeName }}</p>
+      <p>Material: {{ product.material.materialName }}</p>
+
+      <p> Price: ${{ product.price }} </p>
+
+    </mat-card-content>
+      <button (click)="addToCart()">Add to basket</button>
+  </mat-card>
+</div>

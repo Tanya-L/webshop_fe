@@ -37,3 +37,7 @@ position: fixed;
 p {
   font-family: Lato;
 }
+
+div.app-product-list {
+  display: flex;
+}

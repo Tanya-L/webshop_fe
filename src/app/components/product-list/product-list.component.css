@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+}
+
+.card {
+  flex-basis: 25%;
+}
+
+.card p {
+  font-style: italic;
+}
+
+.container-btn {
+  display: flex;
+  flex-basis: 100%;
+}
+
+.container-btn button {
+  margin-right: 2%;
+}
