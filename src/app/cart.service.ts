@@ -1,31 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IProduct } from './components/product-list/product-list.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  // items = [];
 
-  items = [];
+  constructor(private http: HttpClient) {}
 
-  constructor(
-    private http: HttpClient
-  ) {}
-
-  addToCart(product) {
-    console.log(this.items);
-    this.items.push(product);
-   }
+  async addToCart(product: IProduct) {
+    const newRow = {
+      id: 0,
+      customerId: 1,
+      orderId: 0
+    };
+    const response = await fetch('http://localhost:5000/orderRow/1', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newRow)
+    });
+    return await response.json();
+  }
 
   getItems() {
-    console.log(this.items);
-    return this.items;
-
+    return fetch('http://localhost:5000/orderRow/1')
+      .then(response => response.json());
   }
 
   clearCart() {
-    this.items = [];
-    return this.items;
+    // return this.items;
   }
 
   getShippingPrices() {

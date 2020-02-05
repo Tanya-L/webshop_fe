@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/cart.service';
 // import {MatCardModule, MatGridListModule } from '@angular/material';
 
 // import { product } from '../product';
@@ -13,7 +14,6 @@ export interface IProduct {
   colorName: string;
   sizeName: string;
   materialName: string;
-
 }
 
 @Component({
@@ -23,9 +23,16 @@ export interface IProduct {
 })
 export class ProductListComponent {
   products: IProduct[];
+  _service: CartService;
 
-  addToCart() {
-    window.alert('The product added to cart!');
+  constructor(service: CartService) {
+    this._service = service;
+  }
+
+  addToCart(product: IProduct) {
+    console.log(this._service);
+    this._service
+      .addToCart(product);
   }
 
   share() {
@@ -40,6 +47,6 @@ export class ProductListComponent {
   ngOnInit() {
     fetch('http://localhost:5000/product')
       .then(response => response.json())
-      .then((data: IProduct[]) => this.products = data);
+      .then((data: IProduct[]) => (this.products = data));
   }
 }

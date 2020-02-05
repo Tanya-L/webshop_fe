@@ -1,29 +1,76 @@
-<div>
-  <h3>Cartttttt</h3>
-  <p>
-    <a routerLink="/shipping">Shipping Prices</a>
-  </p>
-  <div class="cart-item" *ngFor="let item of items">
+<h3>Cartttttt</h3>
+
+<h2>Shopping Card Example</h2>
+  <table class="table">
+    <tr>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Total</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let item of items">
+      <!-- <td><input type="text" ng:model="item.description"class="input-small"></td>
+              <!-- <td><input type="number" ng:model="item.qty" ng:required class="input-mini"></td>
+              <td><input type="number" ng:model="item.cost" ng:required class="input-mini"></td>
+              <td>{{item.price | currency}}</td>
+              <td>
+                  [<a href ng:click="removeItem($index)">Delete</a>]
+              </td> -->
+      <td>11111</td>
+    </tr>
+    <!-- <tr>
+              <td><a href ng:click="addItem()" class="btn btn-small">Continue</a></td>
+              <td> </td>
+              <td>Total:</td>
+              <td>{{total() | currency}}</td>
+          </tr> -->
+  </table>
+
+
+
+
+
+
+
+
+<!-- shipping component -->
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+<!-- <div class="cart-item">
     <span>{{ item.name }}</span>
     <span>{{ item.price | currency }}</span>
+  </div> -->
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
   </div>
 
-  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-    <div>
-      <label for="name">
-        Name
-      </label>
-      <input id="name" type="text" formControlName="name">
-    </div>
+  <div>
+    <label for="email">
+      E-Mail
+    </label>
+    <input id="email" type="text" formControlName="email">
+  </div>
 
-    <div>
-      <label for="address">
-        Address
-      </label>
-      <input id="address" type="text" formControlName="address">
-    </div>
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+  <div>
+    <label for="telephone">
+      Telephone
+    </label>
+    <input id="telephone" type="text" formControlName="telephone">
+  </div>
 
-    <button class="button" type="submit">Purchase</button>
+  <button class="button" type="submit">Purchase</button>
 
-  </form>
-</div>
+</form>
