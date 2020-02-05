@@ -2,3 +2,14 @@
   font-style: italic;
   font-weight: bold;
 }
+
+.card {
+  margin: 2rem auto;
+  flex-basis: 100%;
+  justify-content: center;
+}
+.mat-cart {
+display: flex;
+flex-basis: auto;
+}
+

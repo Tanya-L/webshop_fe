@@ -4,17 +4,17 @@ import { FormBuilder, EmailValidator } from '@angular/forms';
 import { CartService } from '../../cart.service';
 // import { IProduct } from '../product-list/product-list.component';
 
-// interface IProduct {
-//   id: number;
-//   name: string;
-//   price: number;
-//   actualCost: number;
-//   imageUrl: string;
-//   details: string;
-//   colorName: string;
-//   sizeName: string;
-//   materialName: string;
-// }
+interface IProduct {
+  id: number;
+  name: string;
+  price: number;
+  actualCost: number;
+  imageUrl: string;
+  details: string;
+  colorName: string;
+  sizeName: string;
+  materialName: string;
+}
 
 @Component({
   selector: 'app-cart',

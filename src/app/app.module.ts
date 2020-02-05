@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +25,6 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
   imports: [
     BrowserModule,
     CommonModule,
-    NgbModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
