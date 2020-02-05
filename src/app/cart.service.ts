@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IProduct } from './components/product-list/product-list.component';
 import { Observable } from 'rxjs';
 import { isNgTemplate } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ import { isNgTemplate } from '@angular/compiler';
 export class CartService {
   // items = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router) {}
 
   async addToCart(product: IProduct) {
     const newRow = {
@@ -38,7 +41,7 @@ export class CartService {
   }
 
   async removeCartItemAsync(orderRowId) {
-    const responce = await fetch(
+    const response = await fetch(
       'http://localhost:5000/orderRow/' + orderRowId,
       {
         method: 'DELETE'
@@ -47,12 +50,15 @@ export class CartService {
   }
 
   removeCartItem(orderRowId) {
-    this.removeCartItemAsync(orderRowId)
-    .then(_ => location.reload());
+    this.removeCartItemAsync(orderRowId).then(_ => location.reload());
   }
 
-  totalPrice() {
-    // this.item.product.price
+  totalPrice(items) {
+    let summ = 0;
+    items.forEach(element => {
+      summ += element.product.price;
+    });
+    return summ;
   }
 
   clearCart() {
@@ -61,5 +67,16 @@ export class CartService {
 
   getShippingPrices() {
     return this.http.get('/assets/shipping.json');
+  }
+
+  async createOrder() {
+    const response = await fetch('http://localhost:5000/order/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({})
+    });
+    this.router.navigate(['/thanks']);
   }
 }

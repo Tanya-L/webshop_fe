@@ -1,36 +1,41 @@
-<p>
-  user works!
-</p>
+<div class="form">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div>
+      <label for="name">
+        First Name
+      </label>
+      <input id="FirstName" type="text" formControlName="FirstName">
+    </div>
+    <div>
+      <label for="LastName">
+        Last Name
+      </label>
+      <input id="LastName" type="text" formControlName="LastName">
+    </div>
+    <div>
+      <label for="Email">
+        E-Mail
+      </label>
+      <input id="Email" type="text" formControlName="Email">
+    </div>
 
-******************************
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-  <div>
-    <label for="name">
-      Name
-    </label>
-    <input id="name" type="text" formControlName="name">
-  </div>
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input id="address" type="text" formControlName="address">
+    </div>
+    <div>
+      <label for="telephone">
+        Telephone
+      </label>
+      <input id="telephone" type="text" formControlName="telephone">
+    </div>
 
-  <div>
-    <label for="email">
-      E-Mail
-    </label>
-    <input id="email" type="text" formControlName="email">
-  </div>
+    <!-- <a [routerLink]="['/payment']" class="button fancy-button" type="submit"><i class="material-icons">done_outline</i></a> -->
+    <!-- <button class="button" type="submit">Submit</button> -->
 
-  <div>
-    <label for="address">
-      Address
-    </label>
-    <input id="address" type="text" formControlName="address">
-  </div>
-  <div>
-    <label for="telephone">
-      Telephone
-    </label>
-    <input id="telephone" type="text" formControlName="telephone">
-  </div>
-
-  <button class="button" type="submit">Submit</button>
-
-</form>
+  </form>
+  <a [routerLink]="['/payment']" class="button fancy-button" type="submit"><i
+      class="material-icons">done_outline</i></a>
+</div>

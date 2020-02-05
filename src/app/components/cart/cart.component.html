@@ -45,9 +45,10 @@
     <td></td>
     <td></td>
     <td></td>
-    <td>{{ totalPrice() | currency}}</td>
+    <td>{{ this.cartService.totalPrice(items) | currency}}</td>
     <td></td>
-    <td><a [routerLink]="['/payment']" class="button fancy-button"><i class="material-icons">done_outline</i>To Pay</a></td>
+    <td><a *ngIf="items.length > 0"
+      [routerLink]="['/payment']" class="button fancy-button"><i class="material-icons">done_outline</i>Checkout</a></td>
   </tfoot>
 </table>
 

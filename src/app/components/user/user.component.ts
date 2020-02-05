@@ -9,26 +9,19 @@ import { FormBuilder, EmailValidator } from '@angular/forms';
 export class UserComponent implements OnInit {
   checkoutForm;
 
-  constructor(
-    private formBuilder: FormBuilder,) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
-      // FirstName: '',
-      // LastName: '',
-      name: '',
+      FirstName: '',
+      LastName: '',
       email: '',
       address: '',
       telephone: ''
     });
-
-    // onSubmit(customerData) {
-    //   // Process checkout data here
-    //   // console.warn('Your order has been submitted', customerData);
-
-    //   this.checkoutForm.reset();
-
-    // }
   }
-
+  onSubmit(customerData) {
+    // Process checkout data here
+    this.checkoutForm.reset();
+  }
 }

@@ -22,6 +22,8 @@ import { ShippingComponent } from './components/shipping/shipping.component';
 import { ProductAlertsComponent } from './components/product-alerts/product-alerts.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { UserComponent } from './components/user/user.component';
+import { ThanksComponent } from './components/thanks/thanks.component';
+import { OrdersComponent } from './components/admin/orders/orders.component';
 
 @NgModule({
   imports: [
@@ -44,7 +46,9 @@ import { UserComponent } from './components/user/user.component';
     ShippingComponent,
     ProductAlertsComponent,
     PaymentComponent,
-    UserComponent
+    UserComponent,
+    ThanksComponent,
+    OrdersComponent
   ],
   bootstrap: [AppComponent]
 })
