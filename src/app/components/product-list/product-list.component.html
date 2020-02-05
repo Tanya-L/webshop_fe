@@ -1,8 +1,8 @@
 <mat-card class="card" *ngFor="let product of products">
   <mat-card-header>
     <mat-card-title>
-      <a [title]="product.name + ' details'" [routerLink]="['/product', product.id]">
-        {{ product.name }}</a>
+      <a [title]="'More about ' + product.name + ' details'" [routerLink]="['/product', product.id]">
+       {{ product.name }}</a>
       <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
     </mat-card-title>
   </mat-card-header>
