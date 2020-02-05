@@ -23,28 +23,16 @@ interface IProduct {
 })
 export class CartComponent implements OnInit {
   items;
-  checkoutForm;
-  // displayedColumns: string[] = ['position', 'name', 'color', 'size', 'material', 'st', 'price', 'total'];
-  // dataSourse = IProduct;
+
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder,
     ) { }
 
 
   ngOnInit() {
     this.cartService.getItems()
       .then((data) => (this.items = data));
-
-    this.checkoutForm = this.formBuilder.group({
-      // FirstName: '',
-      // LastName: '',
-      name: '',
-      email: '',
-      address: '',
-      telephone: ''
-    });
   }
 
   onSubmit(customerData) {
@@ -52,7 +40,7 @@ export class CartComponent implements OnInit {
     console.warn('Your order has been submitted', customerData);
 
     this.items = this.cartService.clearCart();
-    this.checkoutForm.reset();
+    // this.checkoutForm.reset();
 
   }
 
@@ -61,26 +49,5 @@ export class CartComponent implements OnInit {
   //   fetch('http://localhost:5000/product')
   //     .then(response => response.json())
   //     .then((data: IProduct[]) => (this.products = data));
-  // }
-
-    // let name = document.getElementById('name').value;
-
-  //   let postData = {
-  //     customer: {
-  //       // FirstName: name,
-  //       email: EmailValidator,
-  //       ...
-  //     // },
-  //     cart: this.cartService.getItems()
-  //   };
-
-  //   fetch('', {
-  //     body: {
-  //       newOrder: JSON.stringify(postData)
-  //     },
-  //     headers: {
-
-  //     }
-  //   });
   // }
 }

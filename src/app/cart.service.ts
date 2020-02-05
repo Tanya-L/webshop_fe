@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IProduct } from './components/product-list/product-list.component';
 import { Observable } from 'rxjs';
+import { isNgTemplate } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,10 @@ export class CartService {
   removeCartItem(orderRowId) {
     this.removeCartItemAsync(orderRowId)
     .then(_ => location.reload());
+  }
+
+  totalPrice() {
+    // this.item.product.price
   }
 
   clearCart() {

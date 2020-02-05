@@ -19,9 +19,9 @@
       <th scope="col">Color</th>
       <th scope="col">Size</th>
       <th scope="col">Material</th>
-      <th scope="col">St</th>
+      <!-- <th scope="col">St</th> -->
       <th scope="col">Price</th>
-      <th scope="col">Total</th>
+      <!-- <th scope="col">Total</th> -->
       <th></th>
     </tr>
   </thead>
@@ -32,69 +32,23 @@
       <td>{{item.color.colorName}}</td>
       <td>{{item.size.sizeName}}</td>
       <td>{{item.material.materialName}}</td>
-      <td>{{item.quantity}}</td>
+      <!-- <td >{{item.quantity}}</td> -->
       <td>{{item.product.price}}</td>
       <td></td>
       <td>
         <button mat-button (click)="this.cartService.removeCartItem(item.id)"><i class="material-icons">delete</i></button></td>
     </tr>
   </tbody>
+  <tfoot>
+    <th>Total</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>{{ totalPrice() | currency}}</td>
+    <td></td>
+    <td><a [routerLink]="['/payment']" class="button fancy-button"><i class="material-icons">done_outline</i>To Pay</a></td>
+  </tfoot>
 </table>
 
-    <!-- <tr *ngFor="let item of items">
-      <td>{{item.product.id}}</td>
-       должно быть orderRow id
-      <td>{{item.product.name}}</td>
-      <td>{{item.color.colorName}}</td>
-      <td>{{item.size.sizeName}}</td>
-      <td>{{item.material.materialName}}</td>
-      <td>{{item.quantity}}</td>
-      <td>{{item.product.price}}</td>
-      <td></td>
-      <td>{{ total() | currency}}</td>
-      <td>
-        <button mat-button (click)="clearCart($index)"><i class="material-icons">delete</i></button>
 
-         <a href onClick="clearCart($index)"><i class="material-icons">delete</i></a>
-    </td>
- -->
-
-
-
-
-
-
-
-
-<!-- ******************************
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-  <div>
-    <label for="name">
-      Name
-    </label>
-    <input id="name" type="text" formControlName="name">
-  </div>
-
-  <div>
-    <label for="email">
-      E-Mail
-    </label>
-    <input id="email" type="text" formControlName="email">
-  </div>
-
-  <div>
-    <label for="address">
-      Address
-    </label>
-    <input id="address" type="text" formControlName="address">
-  </div>
-  <div>
-    <label for="telephone">
-      Telephone
-    </label>
-    <input id="telephone" type="text" formControlName="telephone">
-  </div>
-
-  <button class="button" type="submit">Purchase</button>
-
-</form> -->

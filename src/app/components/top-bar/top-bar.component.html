@@ -1,8 +1,21 @@
-<a [routerLink]="['/']">
-  <h1>
-    Welcome to TShirt shop !
-  </h1>
-</a>
+<a [routerLink]="['/']" class="button fancy-button">
+  <i class="material-icons">home</i></a>
 
-<a [routerLink]="['/cart']" class="button fancy-button">
-  <i class="material-icons">shopping_cart</i></a>
+<h1>
+  Welcome to TShirt shop !
+</h1>
+
+<div class="container-btn">
+  <div>
+    <a [routerLink]="['/user']" class="button fancy-button">
+      <i class="material-icons">face</i></a>
+  </div>
+  <div>
+  <a [routerLink]="['/shipping']" class="button fancy-button">
+    <i class="material-icons">local_shipping</i></a>
+  </div>
+  <div>
+  <a [routerLink]="['/cart']" class="button fancy-button">
+    <i class="material-icons">shopping_cart</i></a>
+  </div>
+</div>

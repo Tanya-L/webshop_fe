@@ -20,6 +20,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { CartComponent } from './components/cart/cart.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
 import { ProductAlertsComponent } from './components/product-alerts/product-alerts.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   imports: [
@@ -40,7 +42,9 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
     ProductDetailComponent,
     CartComponent,
     ShippingComponent,
-    ProductAlertsComponent
+    ProductAlertsComponent,
+    PaymentComponent,
+    UserComponent
   ],
   bootstrap: [AppComponent]
 })
