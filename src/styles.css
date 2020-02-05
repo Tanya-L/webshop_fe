@@ -32,7 +32,7 @@ h2 {
 }
 
 h1, h2 {
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 p {
@@ -104,6 +104,29 @@ label {
   padding-right: 4px;
 }
 
+/* Button */
+.button, button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: greenyellow;
+  color: black;
+  border: none;
+}
+
+.button:hover, button:hover {
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.button:disabled, button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
 /* Top Bar */
 
 app-top-bar {
@@ -118,7 +141,7 @@ app-top-bar {
 }
 
 app-top-bar h1 {
-  color: white;
+  color: black;
   margin: 0;
 }
 

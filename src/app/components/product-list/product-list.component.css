@@ -5,19 +5,28 @@
 }
 
 .card {
+  margin: 2rem auto;
   flex-basis: 25%;
+  justify-content: space-between;
 }
 
 .card p {
-  font-style: italic;
+  font-style: bold;
 }
 
 .container-btn {
   margin-top: 10%;
   display: flex;
   flex-basis: 100%;
+  justify-content: space-around
 }
 
 .container-btn button {
   margin-right: 2%;
 }
+
+.mat-card-content p {
+  font-weight: bold;
+}
+
+

@@ -17,7 +17,7 @@ export class CartService {
       customerId: 1,
       orderId: 0
     };
-    const response = await fetch('http://localhost:5000/orderRow/1', {
+    const response = await fetch('http://localhost:5000/orderRow/' + product.id, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

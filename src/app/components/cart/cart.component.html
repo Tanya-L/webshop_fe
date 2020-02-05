@@ -1,30 +1,35 @@
-<h3>Cartttttt</h3>
+<h1>Your order</h1>
 
-<h2>Shopping Card Example</h2>
+<!-- shipping component -->
+<div class="container-btn-shipping">
+  <a [routerLink]="['/shipping']" class="button fancy-button"><i class="material-icons">local_shipping</i>Delivery Prices</a>
+</div>
+
+<!-- table -->
   <table class="table">
     <tr>
-      <th>Description</th>
-      <th>Qty</th>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th>Material</th>
+      <th>Quantity</th>
       <th>Price</th>
       <th>Total</th>
       <th></th>
     </tr>
     <tr *ngFor="let item of items">
-      <!-- <td><input type="text" ng:model="item.description"class="input-small"></td>
-              <!-- <td><input type="number" ng:model="item.qty" ng:required class="input-mini"></td>
-              <td><input type="number" ng:model="item.cost" ng:required class="input-mini"></td>
-              <td>{{item.price | currency}}</td>
-              <td>
-                  [<a href ng:click="removeItem($index)">Delete</a>]
-              </td> -->
-      <td>11111</td>
+      <td>{{item.product.name}}</td>
+      <td>{{item.color.colorName}}</td>
+      <td>{{item.size.sizeName}}</td>
+      <td>{{item.material.materialName}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.product.price}}</td>
+      <!-- <td>{{ total() | currency}}</td> -->
+      <td>
+        [<a href ng:click="removeItem($index)">Delete</a>]
+    </td>
     </tr>
-    <!-- <tr>
-              <td><a href ng:click="addItem()" class="btn btn-small">Continue</a></td>
-              <td> </td>
-              <td>Total:</td>
-              <td>{{total() | currency}}</td>
-          </tr> -->
+
   </table>
 
 
@@ -34,15 +39,13 @@
 
 
 
-<!-- shipping component -->
-<p>
-  <a routerLink="/shipping">Shipping Prices</a>
-</p>
+
+
 <!-- <div class="cart-item">
     <span>{{ item.name }}</span>
     <span>{{ item.price | currency }}</span>
   </div> -->
-
+<!-- ******************************
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
   <div>
     <label for="name">
@@ -73,4 +76,4 @@
 
   <button class="button" type="submit">Purchase</button>
 
-</form>
+</form> -->

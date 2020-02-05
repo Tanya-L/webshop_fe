@@ -8,15 +8,16 @@
     </p>
     <mat-card-content>
       <p>Descrition: </p>{{ product.details }}
-      <p>Color: {{ product.color.colorName }}</p>
-      <p>Size: {{ product.size.sizeName }}</p>
-      <p>Material: {{ product.material.materialName }}</p>
+      <p>Color: </p>{{ product.color.colorName }}
+      <p>Size:</p> {{ product.size.sizeName }}
+      <p>Material: </p>{{ product.material.materialName }}
 
-      <p> Price: ${{ product.price }} </p>
+      <p> Price:</p> ${{ product.price }}
 
     </mat-card-content>
     <div class="container-btn">
-      <button (click)="addToCart()">Add to basket</button>
+      <button mat-button (click)="addToCart(product)"><i class="material-icons">add_shopping_cart</i>Buy</button>
+
     </div>
   </mat-card>
 </div>

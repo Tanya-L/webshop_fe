@@ -12,6 +12,7 @@ import { IProduct } from '../product-list/product-list.component';
 export class CartComponent implements OnInit {
   items;
   checkoutForm;
+  // displayedColumns: string[] = ['position', 'name', 'color', 'size', 'material', 'st', 'price', 'total'];
 
   constructor(
     private cartService: CartService,
