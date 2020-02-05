@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +14,8 @@ import { TopBarComponent } from '../app/components/top-bar/top-bar.component';
 import { ProductListComponent } from '../app/components/product-list/product-list.component';
 import { ProductComponent } from './components/product/product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -23,6 +25,8 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
 @NgModule({
   imports: [
     BrowserModule,
+    CommonModule,
+    NgbModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -38,8 +42,8 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
     ProductDetailComponent,
     CartComponent,
     ShippingComponent,
-    ProductAlertsComponent,
+    ProductAlertsComponent
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
