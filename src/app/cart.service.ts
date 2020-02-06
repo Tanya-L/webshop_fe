@@ -29,31 +29,9 @@ export class CartService {
   async addToCart(product: IProduct) {
     this.items.push(product);
     localStorage.setItem('cart', JSON.stringify(this.items));
-
-    // const newRow = {
-    //   id: 0,
-    //   customerId: 1,
-    //   orderId: 0
-    // };
-    // const response = await fetch(
-    //   'http://localhost:5000/orderRow/' + product.id,
-    //   {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(newRow)
-    //   }
-    // );
-    // return await response.json();
   }
 
   getItems() {
-    // return fetch('http://localhost:5000/orderRow/1').then(response =>
-    //   response.json()
-    // );
-    // localStorage.getItem('cart');
-    // JSON.parse(localStorage.getItem('cart'));
     return this.items;
   }
 

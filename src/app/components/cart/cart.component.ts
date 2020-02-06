@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, EmailValidator } from '@angular/forms';
 
 import { CartService } from '../../cart.service';
-// import { IProduct } from '../product-list/product-list.component';
 
 interface IProduct {
   id: number;
@@ -33,7 +31,6 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.items = this.cartService.getItems();
     console.log(this.items);
-      // .then((data) => (this.items = data));
   }
 
   onSubmit(customerData) {
@@ -41,14 +38,7 @@ export class CartComponent implements OnInit {
     console.warn('Your order has been submitted', customerData);
 
     this.items = this.cartService.clearCart();
-    // this.checkoutForm.reset();
 
   }
 
-  // **********
-  // ngOnInit() {
-  //   fetch('http://localhost:5000/product')
-  //     .then(response => response.json())
-  //     .then((data: IProduct[]) => (this.products = data));
-  // }
 }
