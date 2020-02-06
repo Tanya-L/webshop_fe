@@ -31,8 +31,9 @@ export class CartComponent implements OnInit {
 
 
   ngOnInit() {
-    this.cartService.getItems()
-      .then((data) => (this.items = data));
+    this.items = this.cartService.getItems();
+    console.log(this.items);
+      // .then((data) => (this.items = data));
   }
 
   onSubmit(customerData) {

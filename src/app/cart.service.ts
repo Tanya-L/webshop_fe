@@ -9,35 +9,38 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CartService {
-  // items = [];
+  items = [];
 
   constructor(
     private http: HttpClient,
     private router: Router) {}
 
   async addToCart(product: IProduct) {
-    const newRow = {
-      id: 0,
-      customerId: 1,
-      orderId: 0
-    };
-    const response = await fetch(
-      'http://localhost:5000/orderRow/' + product.id,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newRow)
-      }
-    );
-    return await response.json();
+    this.items.push(product);
+    // const newRow = {
+    //   id: 0,
+    //   customerId: 1,
+    //   orderId: 0
+    // };
+    // const response = await fetch(
+    //   'http://localhost:5000/orderRow/' + product.id,
+    //   {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(newRow)
+    //   }
+    // );
+    // return await response.json();
   }
 
   getItems() {
-    return fetch('http://localhost:5000/orderRow/1').then(response =>
-      response.json()
-    );
+    // return fetch('http://localhost:5000/orderRow/1').then(response =>
+    //   response.json()
+    // );
+
+    return this.items;
   }
 
   async removeCartItemAsync(orderRowId) {
@@ -75,7 +78,7 @@ export class CartService {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({})
+      body: JSON.stringify(this.items)
     });
     this.router.navigate(['/thanks']);
   }

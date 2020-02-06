@@ -28,12 +28,12 @@
   <tbody>
     <tr *ngFor="let item of items; index as i" >
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{item.product.name}}</td>
+      <td>{{item.name}}</td>
       <td>{{item.color.colorName}}</td>
       <td>{{item.size.sizeName}}</td>
       <td>{{item.material.materialName}}</td>
       <!-- <td >{{item.quantity}}</td> -->
-      <td>{{item.product.price}}</td>
+      <td>{{item.price}}</td>
       <td></td>
       <td>
         <button mat-button (click)="this.cartService.removeCartItem(item.id)"><i class="material-icons">delete</i></button></td>
@@ -47,7 +47,7 @@
     <td></td>
     <td>{{ this.cartService.totalPrice(items) | currency}}</td>
     <td></td>
-    <td><a *ngIf="items.length > 0"
+    <td><a *ngIf="items != undefined && items. length > 0 "
       [routerLink]="['/payment']" class="button fancy-button"><i class="material-icons">done_outline</i>Checkout</a></td>
   </tfoot>
 </table>

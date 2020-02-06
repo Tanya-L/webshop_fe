@@ -1,6 +1,14 @@
 <div>
+
+
   <mat-card class="card">
+    <!-- back to shoping component -->
+    <div class="container-btn-shipping">
+      <a [routerLink]="['/']" class="button fancy-button"><i class="material-icons">backspace</i>Back to shopping</a>
+    </div>
+
     <mat-card-header>
+      <br>
       <mat-card-title>{{ product.name }}</mat-card-title>
     </mat-card-header>
     <p>
