@@ -15,8 +15,15 @@ export class CartService {
     private http: HttpClient,
     private router: Router) {}
 
+  firstLoad(){
+    // TODO 
+  }
+
   async addToCart(product: IProduct) {
     this.items.push(product);
+    // tslint:disable-next-line: quotemark
+    localStorage.setItem("cart", JSON.stringify(this.items));
+
     // const newRow = {
     //   id: 0,
     //   customerId: 1,
@@ -39,7 +46,8 @@ export class CartService {
     // return fetch('http://localhost:5000/orderRow/1').then(response =>
     //   response.json()
     // );
-
+    //localStorage.getItem('cart');
+    //JSON.parse(localStorage.getItem('cart'));
     return this.items;
   }
 
@@ -53,19 +61,18 @@ export class CartService {
   }
 
   removeCartItem(orderRowId) {
+    // TODO splice items array?
     this.removeCartItemAsync(orderRowId).then(_ => location.reload());
+    localStorage.setItem('cart', JSON.stringify(this.items));
+
   }
 
   totalPrice(items) {
     let summ = 0;
     items.forEach(element => {
-      summ += element.product.price;
+      summ += element.price;
     });
     return summ;
-  }
-
-  clearCart() {
-    // return this.items;
   }
 
   getShippingPrices() {
@@ -80,6 +87,17 @@ export class CartService {
       },
       body: JSON.stringify(this.items)
     });
+    this.clearCart();
     this.router.navigate(['/thanks']);
   }
+
+
+  clearCart() {
+    this.items = [];
+    localStorage.setItem('cart', JSON.stringify(this.items));
+  }
+
+  // window.localStorage.setItem('order', JSON.stringify(data));
+  //   window.localStorage.getItem('order');
+  //   JSON.parse(window.localStorage.getItem('order'));
 }

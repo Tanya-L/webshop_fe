@@ -7,7 +7,8 @@ import { CartService } from '../../cart.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-
+items;
+order;
   constructor(
     private cartService: CartService,
     ) { }
@@ -16,3 +17,6 @@ export class PaymentComponent implements OnInit {
   }
 
 }
+
+
+

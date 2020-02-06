@@ -1,11 +1,12 @@
 <div>
+  <!-- back to shoping component -->
+  <div class="container-btn-shipping">
+    <a [routerLink]="['/']" class="button fancy-button"><i class="material-icons">backspace</i>Back to cataloge</a>
+  </div>
+</div>
 
-
+<div>
   <mat-card class="card">
-    <!-- back to shoping component -->
-    <div class="container-btn-shipping">
-      <a [routerLink]="['/']" class="button fancy-button"><i class="material-icons">backspace</i>Back to shopping</a>
-    </div>
 
     <mat-card-header>
       <br>
@@ -16,16 +17,15 @@
     </p>
     <mat-card-content>
       <p>Descrition: </p>{{ product.details }}
-      <p>Color: </p>{{ product.color.colorName }}
-      <p>Size:</p> {{ product.size.sizeName }}
-      <p>Material: </p>{{ product.material.materialName }}
+      <p>Color: </p>{{ product.colorName }}
+      <p>Size:</p> {{ product.sizeName }}
+      <p>Material: </p>{{ product.materialName }}
 
       <p> Price:</p> ${{ product.price }}
 
     </mat-card-content>
     <div class="container-btn">
       <button mat-button (click)="addToCart(product)"><i class="material-icons">add_shopping_cart</i>Buy</button>
-
     </div>
   </mat-card>
 </div>
