@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-payment',
@@ -7,16 +6,7 @@ import { CartService } from '../../cart.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-items;
-order;
-  constructor(
-    private cartService: CartService,
-    ) { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
-
-
-

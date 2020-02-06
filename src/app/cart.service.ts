@@ -15,14 +15,20 @@ export class CartService {
     private http: HttpClient,
     private router: Router) {}
 
-  firstLoad(){
-    // TODO 
+  firstLoad() {
+    // TODO getItem in local storage
+    const fromLs = localStorage.getItem('cart');
+    if (fromLs === undefined) {
+      // do nothing
+      this.items = [];
+    } else {
+      this.items = JSON.parse(fromLs);
+    }
   }
 
   async addToCart(product: IProduct) {
     this.items.push(product);
-    // tslint:disable-next-line: quotemark
-    localStorage.setItem("cart", JSON.stringify(this.items));
+    localStorage.setItem('cart', JSON.stringify(this.items));
 
     // const newRow = {
     //   id: 0,
@@ -46,8 +52,8 @@ export class CartService {
     // return fetch('http://localhost:5000/orderRow/1').then(response =>
     //   response.json()
     // );
-    //localStorage.getItem('cart');
-    //JSON.parse(localStorage.getItem('cart'));
+    // localStorage.getItem('cart');
+    // JSON.parse(localStorage.getItem('cart'));
     return this.items;
   }
 
@@ -96,8 +102,4 @@ export class CartService {
     this.items = [];
     localStorage.setItem('cart', JSON.stringify(this.items));
   }
-
-  // window.localStorage.setItem('order', JSON.stringify(data));
-  //   window.localStorage.getItem('order');
-  //   JSON.parse(window.localStorage.getItem('order'));
 }

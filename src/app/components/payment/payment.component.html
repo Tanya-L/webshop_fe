@@ -1,5 +1,5 @@
 <p>
   congratulations you did it, and payment works!
 </p>
-<button (click)="this.cartService.createOrder()"><i class="material-icons">payment</i>Pay Now</button>
-
+<a [routerLink]="['/thanks']"><button (click)="this.cartService.createOrder()">
+  <i class="material-icons">payment</i>Pay Now</button></a>
